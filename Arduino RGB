@@ -1,0 +1,27 @@
+int RED = 11; 
+int GRE = 10;
+int BLU = 9;
+
+void setup(){
+  pinMode(RED, OUTPUT);
+  pinMode(GRE, OUTPUT);
+  pinMode(BLU, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop(){
+    char command;
+    
+    for(int j = 11 ; j>= 9; j--){
+    for(int i = 0; i <= 255 ; i += 5){
+      analogWrite(j, i);
+      delay(50);
+      Serial.println(i);
+    }
+    for(int i = 255 ; i >= 0 ; i -= 5){
+      analogWrite(j, i);
+      delay(50);
+      Serial.println(i);
+    }
+    }
+}
